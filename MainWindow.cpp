@@ -11,6 +11,10 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+    // Set a custom window title if specified on build command line
+    if (strlen(HELP_VIEWER_PROGRAM_NAME) > 0) this->setWindowTitle(tr("%1 - Help").arg(HELP_VIEWER_PROGRAM_NAME));
+    else this->setWindowTitle(tr("Help"));
+
     // Connect slots
     connect(ui->pushButtonPrevious, &QPushButton::clicked, ui->textBrowser, &QTextBrowser::backward);
     connect(ui->pushButtonNext, &QPushButton::clicked, ui->textBrowser, &QTextBrowser::forward);

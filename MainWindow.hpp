@@ -33,7 +33,7 @@ private:
     Ui::MainWindow *ui;
 
 private slots:
-    /** Called when the user is allowed to go forward. */
+    /** Called when the user is allowed to go backward. */
     void _slotTextBrowserBackwardAvailable(bool isAvailable);
     /** Called when the user is allowed to go forward. */
     void _slotTextBrowserForwardAvailable(bool isAvailable);
