@@ -22,6 +22,13 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+    /** Configure the text browser so it can display the initial document and is able to follow hyperlinks.
+     * @param basePath The "website" root directory, each hyperlink relative URL is concatened to this base path.
+     * @param homeDocumentName The document to display when the user clicks the "home" button.
+     * @param displayedDocumentName The document to display on the text browser.
+     */
+    void setContentSettings(QString basePath, QString homeDocumentName, QString displayedDocumentName);
+
 private:
     Ui::MainWindow *ui;
 

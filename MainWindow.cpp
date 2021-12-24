@@ -25,6 +25,16 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::setContentSettings(QString basePath, QString homeDocumentName, QString displayedDocumentName)
+{
+    QStringList searchPaths;
+    searchPaths.append(":" + basePath);
+    ui->textBrowser->setSearchPaths(searchPaths);
+
+    ui->textBrowser->setSource(QUrl(homeDocumentName)); // Set the home document as first, so it is considered the home by the text browser
+    ui->textBrowser->setSource(QUrl(displayedDocumentName));
+}
+
 void MainWindow::_slotTextBrowserBackwardAvailable(bool isAvailable)
 {
     ui->pushButtonPrevious->setEnabled(isAvailable);
