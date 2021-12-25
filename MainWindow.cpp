@@ -39,6 +39,11 @@ void MainWindow::setContentSettings(QString basePath, QString homeDocumentName, 
     ui->textBrowser->setSource(QUrl(displayedDocumentName));
 }
 
+void MainWindow::displayDocument(QString documentName)
+{
+    ui->textBrowser->setSource(QUrl(documentName));
+}
+
 void MainWindow::_slotTextBrowserBackwardAvailable(bool isAvailable)
 {
     ui->pushButtonPrevious->setEnabled(isAvailable);

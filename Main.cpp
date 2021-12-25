@@ -3,6 +3,7 @@
  * @author Adrien RICCIARDI
  */
 #include <MainWindow.hpp>
+#include <RemoteControl.hpp>
 #include <QApplication>
 #include <QMessageBox>
 
@@ -27,9 +28,14 @@ int main(int argc, char *argv[])
     }
 
     // Create and configure application main window
-    MainWindow window;
-    window.setContentSettings(argv[1], argv[2], argv[3]);
-    window.showMaximized();
+    MainWindow mainWindow;
+    mainWindow.setContentSettings(argv[1], argv[2], argv[3]);
+    mainWindow.showMaximized();
+
+    // Create a thread that will listen to commands on process stdin
+    RemoteControl remoteControlThread;
+    remoteControlThread.start();
+    QObject::connect(&remoteControlThread, &RemoteControl::commandReceived, &mainWindow, &MainWindow::displayDocument);
 
     return application.exec();
 }

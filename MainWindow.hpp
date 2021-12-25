@@ -29,6 +29,11 @@ public:
      */
     void setContentSettings(QString basePath, QString homeDocumentName, QString displayedDocumentName);
 
+    /** Display the specified document.
+     * @param documentName The document to display file name and extension. Its path is relative to the base path provided in setContentSettings().
+     */
+    void displayDocument(QString documentName);
+
 private:
     Ui::MainWindow *ui;
 

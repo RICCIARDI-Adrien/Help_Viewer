@@ -11,10 +11,12 @@ DEFINES += HELP_VIEWER_PROGRAM_NAME="\"\\\"$$HELP_VIEWER_PROGRAM_NAME\\\"\""
 
 SOURCES += \
     Main.cpp \
-    MainWindow.cpp
+    MainWindow.cpp \
+    RemoteControl.cpp
 
 HEADERS += \
-    MainWindow.hpp
+    MainWindow.hpp \
+    RemoteControl.hpp
 
 FORMS += \
     MainWindow.ui
