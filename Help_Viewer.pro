@@ -30,4 +30,5 @@ RESOURCES += \
 TRANSLATIONS += \
     Translations/de.ts \
     Translations/es.ts \
-    Translations/fr.ts
+    Translations/fr.ts \
+    Translations/it.ts

@@ -29,6 +29,10 @@ namespace Configuration
                 _languageString = "de";
                 break;
 
+            case QLocale::Italian:
+                _languageString = "it";
+                break;
+
             case QLocale::Spanish:
                 _languageString = "es";
                 break;
