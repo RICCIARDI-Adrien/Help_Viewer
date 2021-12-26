@@ -2,5 +2,6 @@
     <qresource prefix="/">
         <file>Translations/fr.qm</file>
         <file>Translations/es.qm</file>
+        <file>Translations/de.qm</file>
     </qresource>
 </RCC>

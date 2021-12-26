@@ -23,6 +23,12 @@ namespace Configuration
                 _languageString = "fr";
                 break;
 
+            case QLocale::German:
+            case QLocale::SwissGerman:
+                _languageId = QLocale::German;
+                _languageString = "de";
+                break;
+
             case QLocale::Spanish:
                 _languageString = "es";
                 break;
