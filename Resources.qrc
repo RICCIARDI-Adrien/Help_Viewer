@@ -4,5 +4,6 @@
         <file>Translations/es.qm</file>
         <file>Translations/de.qm</file>
         <file>Translations/it.qm</file>
+        <file>Icon/Icon.svg</file>
     </qresource>
 </RCC>

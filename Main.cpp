@@ -51,6 +51,10 @@ int main(int argc, char *argv[])
     MainWindow mainWindow;
     mainWindow.setContentSettings(argv[1], argv[2], argv[3]);
     mainWindow.showMaximized();
+    // Set task bar icon on Linux
+    #ifdef Q_OS_LINUX
+        mainWindow.setWindowIcon(QIcon(":/Icon/Icon.svg"));
+    #endif
 
     // Create a thread that will listen to commands on process stdin
     RemoteControl remoteControlThread;
