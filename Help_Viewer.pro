@@ -28,4 +28,5 @@ RESOURCES += \
     Resources.qrc
 
 TRANSLATIONS += \
+    Translations/es.ts \
     Translations/fr.ts
