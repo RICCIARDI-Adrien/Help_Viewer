@@ -2,16 +2,36 @@
  * Program entry point and main loop.
  * @author Adrien RICCIARDI
  */
+#include <Configuration.hpp>
 #include <MainWindow.hpp>
 #include <RemoteControl.hpp>
 #include <QApplication>
+#include <QLibraryInfo>
 #include <QMessageBox>
+#include <QTranslator>
 
 int main(int argc, char *argv[])
 {
     QApplication application(argc, argv);
 
-    // TODO set up translations
+    // Retrieve configuration settings
+    Configuration::initialize();
+
+    // Load Qt-provided translations (used for instance in default dialogs)
+    QTranslator qtTranslator;
+    bool isLocaleLoaded = qtTranslator.load(QLocale::system(), "qt", "_", QLibraryInfo::location(QLibraryInfo::TranslationsPath));
+    if (isLocaleLoaded) application.installTranslator(&qtTranslator);
+
+    // Select the right application translation according to system language
+    QTranslator translator;
+    if (Configuration::getSystemLanguageId() != QLocale::English)
+    {
+        // Load the corresponding translation
+        isLocaleLoaded = translator.load(":/Translations/" + Configuration::getSystemLanguageString() + ".qm");
+
+        // Apply the loaded locate
+        if (isLocaleLoaded) application.installTranslator(&translator);
+    }
 
     // Check arguments
     if (argc < 4)

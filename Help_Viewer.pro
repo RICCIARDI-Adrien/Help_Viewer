@@ -10,15 +10,22 @@ CONFIG += c++11
 DEFINES += HELP_VIEWER_PROGRAM_NAME="\"\\\"$$HELP_VIEWER_PROGRAM_NAME\\\"\""
 
 SOURCES += \
+    Configuration.cpp \
     Main.cpp \
     MainWindow.cpp \
     RemoteControl.cpp
 
 HEADERS += \
+    Configuration.hpp \
     MainWindow.hpp \
     RemoteControl.hpp
 
 FORMS += \
     MainWindow.ui
 
-RESOURCES += $$HELP_VIEWER_CONTENT_RESOURCE_FILE
+RESOURCES += \
+    $$HELP_VIEWER_CONTENT_RESOURCE_FILE \
+    Resources.qrc
+
+TRANSLATIONS += \
+    Translations/fr.ts
