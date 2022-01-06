@@ -2,6 +2,8 @@ QT += core gui widgets
 
 CONFIG += c++11
 
+# MacOS application icon
+ICON = Icon/Icon.icns
 # Windows application icon
 RC_ICONS = Icon/Icon.ico
 
