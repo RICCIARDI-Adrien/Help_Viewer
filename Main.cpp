@@ -44,7 +44,8 @@ int main(int argc, char *argv[])
             "The third argument is the name of the document to display, its path is relative to the base path.",
             QMessageBox::Ok);
 
-        return application.exec();
+        // The preceding QMessageBox runs its own event loop, so there is no need to call application.exec()
+        return 0;
     }
 
     // Create and configure application main window
