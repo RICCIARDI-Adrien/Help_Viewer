@@ -13,9 +13,17 @@ class RemoteControl: public QThread
 
 public:
     RemoteControl();
+    virtual ~RemoteControl();
 
 protected:
     void run();
+
+private:
+    /** Send the received command to the event loop.
+     * @param pointerStringCommand The command string as received from stdin.
+     * @param length The command string length in bytes.
+     */
+    void _sendCommand(char *pointerStringCommand, int length);
 
 signals:
     /** Emit this signal when a command has been fully received. */
