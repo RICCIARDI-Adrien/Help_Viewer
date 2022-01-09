@@ -42,6 +42,10 @@ void MainWindow::setContentSettings(QString basePath, QString homeDocumentName, 
 void MainWindow::displayDocument(QString documentName)
 {
     ui->textBrowser->setSource(QUrl(documentName));
+
+    // Put the application window on top
+    this->raise();
+    this->activateWindow();
 }
 
 void MainWindow::_slotTextBrowserBackwardAvailable(bool isAvailable)
