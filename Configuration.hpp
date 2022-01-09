@@ -7,6 +7,9 @@
 
 #include <QLocale>
 
+/** The copyright year to embed in the application. */
+#define CONFIGURATION_APPLICATION_COPYRIGHT_YEAR "2022"
+
 namespace Configuration
 {
     /** Determine and cache system language. */

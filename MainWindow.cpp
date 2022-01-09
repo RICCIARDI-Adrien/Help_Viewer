@@ -2,7 +2,9 @@
  * See MainWindow.hpp for description.
  * @author Adrien RICCIARDI
  */
+#include <Configuration.hpp>
 #include <MainWindow.hpp>
+#include <QMessageBox>
 #include <ui_MainWindow.h>
 
 MainWindow::MainWindow(QWidget *parent)
@@ -19,6 +21,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->pushButtonPrevious, &QPushButton::clicked, ui->textBrowser, &QTextBrowser::backward);
     connect(ui->pushButtonNext, &QPushButton::clicked, ui->textBrowser, &QTextBrowser::forward);
     connect(ui->pushButtonHome, &QPushButton::clicked, ui->textBrowser, &QTextBrowser::home);
+    connect(ui->pushButtonAbout, &QPushButton::clicked, this, &MainWindow::_slotPushButtonAboutClicked);
     connect(ui->pushButtonQuit, &QPushButton::clicked, this, &QApplication::quit);
     connect(ui->textBrowser, &QTextBrowser::backwardAvailable, this, &MainWindow::_slotTextBrowserBackwardAvailable);
     connect(ui->textBrowser, &QTextBrowser::forwardAvailable, this, &MainWindow::_slotTextBrowserForwardAvailable);
@@ -56,4 +59,9 @@ void MainWindow::_slotTextBrowserBackwardAvailable(bool isAvailable)
 void MainWindow::_slotTextBrowserForwardAvailable(bool isAvailable)
 {
     ui->pushButtonNext->setEnabled(isAvailable);
+}
+
+void MainWindow::_slotPushButtonAboutClicked(bool)
+{
+    QMessageBox::information(this, tr("About"), tr("(C) 2021-%1 Adrien RICCIARDI<br /><br />Build date: %2 %3<br /><br />This application is using Qt framework under <a href=\"https://www.gnu.org/licenses/lgpl-3.0-standalone.html\">LGPLv3 license</a>.").arg(CONFIGURATION_APPLICATION_COPYRIGHT_YEAR, __DATE__, __TIME__), QMessageBox::Ok);
 }

@@ -42,5 +42,8 @@ private slots:
     void _slotTextBrowserBackwardAvailable(bool isAvailable);
     /** Called when the user is allowed to go forward. */
     void _slotTextBrowserForwardAvailable(bool isAvailable);
+
+    /** Called when the user clicks the "about" button. */
+    void _slotPushButtonAboutClicked(bool isChecked);
 };
 #endif // MAINWINDOW_H

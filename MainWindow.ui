@@ -59,6 +59,20 @@
         </widget>
        </item>
        <item>
+        <widget class="QPushButton" name="pushButtonAbout">
+         <property name="text">
+          <string>About</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="Line" name="line_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
         <widget class="QPushButton" name="pushButtonQuit">
          <property name="text">
           <string>Quit</string>
@@ -95,6 +109,7 @@
   <tabstop>pushButtonPrevious</tabstop>
   <tabstop>pushButtonNext</tabstop>
   <tabstop>pushButtonHome</tabstop>
+  <tabstop>pushButtonAbout</tabstop>
   <tabstop>pushButtonQuit</tabstop>
   <tabstop>textBrowser</tabstop>
  </tabstops>
