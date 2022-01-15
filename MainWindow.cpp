@@ -5,6 +5,7 @@
 #include <Configuration.hpp>
 #include <MainWindow.hpp>
 #include <QMessageBox>
+#include <QMenuBar>
 #include <ui_MainWindow.h>
 
 MainWindow::MainWindow(QWidget *parent)
@@ -12,6 +13,28 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    // Create a menu bar on macOS filled with the mandatory menu entries, this also makes the Qt-provided translations work for this menu
+    #ifdef Q_OS_MACOS
+        // Create the menu bar
+        QMenuBar *pointerMenuBar = new QMenuBar(this);
+
+        // Create the necessary menus
+        QMenu *pointerMenuFile = pointerMenuBar->addMenu("File"); // No need to translate the menu name as this menu won't be displayed
+        QMenu *pointerMenuHelp = pointerMenuBar->addMenu("Help"); // No need to translate the menu name as this menu won't be displayed
+
+        // Create the "Quit" entry in the "File" menu
+        QAction *pointerActionQuit = new QAction("Quit", pointerMenuBar); // The action name will be automatically translated by Qt-provided translations because it is identified as the default "Quit" entry
+        pointerActionQuit->setMenuRole(QAction::QuitRole);
+        pointerMenuFile->addAction(pointerActionQuit);
+        connect(pointerActionQuit, &QAction::triggered, this, &QApplication::quit);
+
+        // Create the "About" entry in the "Help" menu
+        QAction *pointerActionAbout = new QAction("About", pointerMenuBar); // The action name will be automatically translated by Qt-provided translations because it is identified as the default "About" entry
+        pointerActionAbout->setMenuRole(QAction::AboutRole);
+        pointerMenuHelp->addAction(pointerActionAbout);
+        connect(pointerActionAbout, &QAction::triggered, this, &MainWindow::_slotPushButtonAboutClicked);
+    #endif
 
     // Set a custom window title if specified on build command line
     if (strlen(HELP_VIEWER_PROGRAM_NAME) > 0) this->setWindowTitle(tr("%1 - Help").arg(HELP_VIEWER_PROGRAM_NAME));
