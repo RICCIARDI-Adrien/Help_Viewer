@@ -86,5 +86,6 @@ void MainWindow::_slotTextBrowserForwardAvailable(bool isAvailable)
 
 void MainWindow::_slotPushButtonAboutClicked(bool)
 {
-    QMessageBox::information(this, tr("About"), tr("(C) 2021-%1 Adrien RICCIARDI<br /><br />Build date: %2 %3<br /><br />This application is using Qt framework under <a href=\"https://www.gnu.org/licenses/lgpl-3.0-standalone.html\">LGPLv3 license</a>.").arg(CONFIGURATION_APPLICATION_COPYRIGHT_YEAR, __DATE__, __TIME__), QMessageBox::Ok);
+    QString currentYear = QString(__DATE__).mid(7, 4);
+    QMessageBox::information(this, tr("About"), tr("(C) 2021-%1 Adrien RICCIARDI<br /><br />Build date: %2 %3<br /><br />This application is using Qt framework under <a href=\"https://www.gnu.org/licenses/lgpl-3.0-standalone.html\">LGPLv3 license</a>.").arg(currentYear, __DATE__, __TIME__), QMessageBox::Ok);
 }
