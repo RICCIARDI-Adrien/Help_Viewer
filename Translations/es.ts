@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="es">
+<TS version="2.1" language="es_ES">
 <context>
     <name>MainWindow</name>
     <message>
@@ -20,7 +20,7 @@
     </message>
     <message>
         <location filename="../MainWindow.ui" line="64"/>
-        <location filename="../MainWindow.cpp" line="66"/>
+        <location filename="../MainWindow.cpp" line="90"/>
         <source>About</source>
         <translation>Acerca de</translation>
     </message>
@@ -30,19 +30,19 @@
         <translation>Salir</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="17"/>
+        <location filename="../MainWindow.cpp" line="40"/>
         <source>%1 - Help</source>
         <translation>%1 - Ayuda</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="18"/>
+        <location filename="../MainWindow.cpp" line="41"/>
         <source>Help</source>
         <translation>Ayuda</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="66"/>
-        <source>(C) 2021-%1 Adrien RICCIARDI&lt;br /&gt;&lt;br /&gt;Build date: %2 %3&lt;br /&gt;&lt;br /&gt;This application is using Qt framework under &lt;a href=&quot;https://www.gnu.org/licenses/lgpl-3.0-standalone.html&quot;&gt;LGPLv3 license&lt;/a&gt;.</source>
-        <translation>(C) 2021-%1 Adrien RICCIARDI&lt;br /&gt;&lt;br /&gt;Fecha de compilación: %2 %3&lt;br /&gt;&lt;br /&gt;Esta aplicación utiliza Qt framework bajo la &lt;a href=&quot;https://www.gnu.org/licenses/lgpl-3.0-standalone.html&quot;&gt;licencia LGPLv3&lt;/a&gt;.</translation>
+        <location filename="../MainWindow.cpp" line="90"/>
+        <source>(C) 2021-%1 Adrien RICCIARDI&lt;br /&gt;&lt;br /&gt;Build date: %2 %3&lt;br /&gt;Qt version: %4&lt;br /&gt;&lt;br /&gt;This application is using Qt framework under &lt;a href=&quot;https://www.gnu.org/licenses/lgpl-3.0-standalone.html&quot;&gt;LGPLv3 license&lt;/a&gt;.</source>
+        <translation>(C) 2021-%1 Adrien RICCIARDI&lt;br /&gt;&lt;br /&gt;Fecha de compilación: %2 %3&lt;br /&gt;Versión de Qt: %4&lt;br /&gt;&lt;br /&gt;Esta aplicación utiliza Qt framework bajo la &lt;a href=&quot;https://www.gnu.org/licenses/lgpl-3.0-standalone.html&quot;&gt;licencia LGPLv3&lt;/a&gt;.</translation>
     </message>
 </context>
 </TS>
