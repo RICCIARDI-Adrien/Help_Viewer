@@ -26,8 +26,6 @@ add_compile_definitions(HELP_VIEWER_PROGRAM_NAME="${HELP_VIEWER_PROGRAM_NAME}")
 include_directories("${CMAKE_CURRENT_SOURCE_DIR}")
 
 set(PROJECT_SOURCES
-    Configuration.cpp
-    Configuration.hpp
     Main.cpp
     MainWindow.cpp
     MainWindow.hpp

@@ -2,7 +2,6 @@
  * Program entry point and main loop.
  * @author Adrien RICCIARDI
  */
-#include <Configuration.hpp>
 #include <MainWindow.hpp>
 #include <RemoteControl.hpp>
 #include <QApplication>
@@ -13,9 +12,6 @@
 int main(int argc, char *argv[])
 {
     QApplication application(argc, argv);
-
-    // Retrieve configuration settings
-    Configuration::initialize();
 
     // Load Qt-provided translations (used for instance in default dialogs)
     QTranslator qtTranslator;

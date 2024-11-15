@@ -2,7 +2,6 @@
  * See MainWindow.hpp for description.
  * @author Adrien RICCIARDI
  */
-#include <Configuration.hpp>
 #include <MainWindow.hpp>
 #include <QMessageBox>
 #include <QMenuBar>
