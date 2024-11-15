@@ -19,19 +19,16 @@ int main(int argc, char *argv[])
 
     // Load Qt-provided translations (used for instance in default dialogs)
     QTranslator qtTranslator;
-    bool isLocaleLoaded = qtTranslator.load(QLocale::system(), "qt", "_", QLibraryInfo::location(QLibraryInfo::TranslationsPath));
+    bool isLocaleLoaded = qtTranslator.load(QLocale::system(), "qt", "_", QLibraryInfo::path(QLibraryInfo::TranslationsPath));
     if (isLocaleLoaded) application.installTranslator(&qtTranslator);
 
     // Select the right application translation according to system language
     QTranslator translator;
-    if (Configuration::getSystemLanguageId() != QLocale::English)
-    {
-        // Load the corresponding translation
-        isLocaleLoaded = translator.load(":/Translations/" + Configuration::getSystemLanguageString() + ".qm");
-
-        // Apply the loaded locate
-        if (isLocaleLoaded) application.installTranslator(&translator);
-    }
+    // Retrieve the current language code of the system
+    const QString languageCode = QLocale::languageToCode(QLocale::system().language());
+    // Load the corresponding translation
+    isLocaleLoaded = translator.load(":/Translations/" + languageCode + ".qm");
+    if (isLocaleLoaded) application.installTranslator(&translator);
 
     // Check arguments
     if (argc < 4)

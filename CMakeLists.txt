@@ -62,6 +62,16 @@ qt_add_executable(Help_Viewer
     ${PROJECT_RESOURCES}
 )
 
+qt_add_translations(Help_Viewer
+    TS_FILES
+        Translations/de.ts
+        Translations/es.ts
+        Translations/fr.ts
+        Translations/it.ts
+    RESOURCE_PREFIX "/Translations"
+    LUPDATE_OPTIONS "-no-obsolete"
+)
+
 set_target_properties(Help_Viewer PROPERTIES
     MACOSX_BUNDLE_BUNDLE_NAME "Help Viewer"
     MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
